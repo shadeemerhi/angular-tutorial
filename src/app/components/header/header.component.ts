@@ -6,17 +6,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  @Output() onToggle: EventEmitter<string> = new EventEmitter();
+  @Output() selectNavItem: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  onToggleView(name: string) {
-    this.onToggle.emit(name)
+  onSelect(name: string) {
+    this.selectNavItem.emit(name)
   }
-
 }

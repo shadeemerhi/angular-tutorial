@@ -12,11 +12,7 @@ export class AppComponent {
 
   viewName: string  = 'Recipes';
 
-  toggleShow(name: string) {
-    this.viewName = name;
-  }
-
-  onToggle(name: string) {
+  onNavigate(name: string) {
     this.viewName = name;
   }
 }
