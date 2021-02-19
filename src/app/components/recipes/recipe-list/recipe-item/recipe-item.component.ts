@@ -7,7 +7,11 @@ import Recipe from '../../recipe.model';
   styleUrls: ['./recipe-item.component.scss']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe: Recipe;
+  @Input() recipe: Recipe = {
+    name: '',
+    description: '',
+    imagePath: ''
+  }
 
   constructor() { }
 
