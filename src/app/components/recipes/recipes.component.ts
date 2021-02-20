@@ -8,21 +8,11 @@ import Recipe from '../../shared/recipe.model';
 })
 export class RecipesComponent implements OnInit {
 
-  recipe: Recipe = {
-    name: '',
-    description: '',
-    imagePath: ''
-  }
+  selectedRecipe: Recipe;
 
   constructor() { }
 
-
-
   ngOnInit(): void {
-  }
-
-  onRecipeSelect(recipe: Recipe) {
-    this.recipe = recipe;
   }
 
 }

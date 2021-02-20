@@ -7,7 +7,7 @@ import Recipe from '../../../../shared/recipe.model';
   styleUrls: ['./recipe-item.component.scss']
 })
 export class RecipeItemComponent implements OnInit {
-  @Output() recipeSelect: EventEmitter<Recipe> = new EventEmitter();
+  @Output() recipeSelect: EventEmitter<void> = new EventEmitter();
   @Input() recipe: Recipe = {
     name: '',
     description: '',
@@ -19,8 +19,7 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelectRecipe(recipe: Recipe) {
-    this.recipeSelect.emit(recipe);
+  onSelectRecipe() {
+    this.recipeSelect.emit();
   }
-
 }
