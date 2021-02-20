@@ -1,4 +1,3 @@
-import { TransitiveCompileNgModuleMetadata } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
