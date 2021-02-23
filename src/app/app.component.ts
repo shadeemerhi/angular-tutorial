@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'udemy-course';
   name: string = 'Shadee';
 
-  viewName: string  = 'List';
+  viewName: string  = 'Recipes';
 
   onNavigate(name: string) {
     this.viewName = name;
