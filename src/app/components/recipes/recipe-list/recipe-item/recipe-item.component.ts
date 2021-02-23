@@ -6,7 +6,7 @@ import { RecipeService } from '../../recipe.service';
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.scss'],
-  providers: [RecipeService]
+  // providers: [RecipeService]
 })
 
 
@@ -17,6 +17,7 @@ export class RecipeItemComponent implements OnInit {
     imagePath: '',
   }
   @Output() recipeSelected: EventEmitter<Recipe> = new EventEmitter();
+  // recipeSelected = new EventEmitter<Recipe>();
 
 
   constructor(private recipeService: RecipeService) { }
@@ -26,5 +27,8 @@ export class RecipeItemComponent implements OnInit {
 
   onSelectRecipe() {
     this.recipeSelected.emit(this.recipe);
+    this.recipeService.selectRecipe(this.recipe);
+    // this.recipeService.selectRecipe(this.recipe);
+    // this.recipeService.selectRecipe
   }
 }

@@ -8,9 +8,7 @@ import Recipe from '../../shared/recipe.model';
 
 export class RecipeService {
 
-  // recipeSelected = new EventEmitter<Recipe>();
-  // recipeSelected: Observable<Recipe>;
-  private recipeSelected = new Subject<Recipe>();
+  recipeChanged = new EventEmitter<Recipe>();
 
   recipes: Recipe[] = [
     {
@@ -32,12 +30,7 @@ export class RecipeService {
   }
 
   selectRecipe(recipe: Recipe) {
-    console.log(recipe);
-    this.recipeSelected.next(recipe);
-  }
-
-  getSelectedRecipe():Observable<Recipe> {
-    return this.recipeSelected.asObservable();
+    this.recipeChanged.emit({...recipe})
   }
 
 }
