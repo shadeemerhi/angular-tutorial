@@ -1,12 +1,16 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import Recipe from '../../shared/recipe.model';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
+
 export class RecipeService {
 
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected: Observable<Recipe>;
+  private recipeSelected = new Subject<Recipe>();
 
   recipes: Recipe[] = [
     {
@@ -21,10 +25,19 @@ export class RecipeService {
     }
   ];
 
-  // constructor() { }
+  constructor() { }
 
   getRecipes() {
     return [...this.recipes];
+  }
+
+  selectRecipe(recipe: Recipe) {
+    console.log(recipe);
+    this.recipeSelected.next(recipe);
+  }
+
+  getSelectedRecipe():Observable<Recipe> {
+    return this.recipeSelected.asObservable();
   }
 
 }

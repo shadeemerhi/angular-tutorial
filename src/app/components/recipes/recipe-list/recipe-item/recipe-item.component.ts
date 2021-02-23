@@ -8,12 +8,15 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipe-item.component.scss'],
   providers: [RecipeService]
 })
+
+
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe = {
     name: '',
     description: '',
     imagePath: '',
   }
+  @Output() recipeSelected: EventEmitter<Recipe> = new EventEmitter();
 
 
   constructor(private recipeService: RecipeService) { }
@@ -22,7 +25,6 @@ export class RecipeItemComponent implements OnInit {
   }
 
   onSelectRecipe() {
-    console.log(this.recipe);
-    this.recipeService.recipeSelected.emit(this.recipe);
+    this.recipeSelected.emit(this.recipe);
   }
 }
