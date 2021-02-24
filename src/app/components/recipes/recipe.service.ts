@@ -8,7 +8,7 @@ import Recipe from '../../shared/recipe.model';
 
 export class RecipeService {
 
-  recipeChanged = new EventEmitter<Recipe>();
+  recipeChanged = new Subject<Recipe>();
 
   recipes: Recipe[] = [
     {
@@ -39,7 +39,7 @@ export class RecipeService {
   }
 
   selectRecipe(recipe: Recipe) {
-    this.recipeChanged.emit({...recipe});
+    this.recipeChanged.next({...recipe});
   }
 
 }
