@@ -12,14 +12,23 @@ export class RecipeService {
 
   recipes: Recipe[] = [
     {
-      name: 'A Test Recipe',
-      description: 'A Test Recipe Description',
-      imagePath: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872'
+      name: 'Pasta',
+      description: 'This pasta will change your life',
+      imagePath: 'https://images.unsplash.com/photo-1579684947550-22e945225d9a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80',
+      ingredients: [
+        {name: 'Noodles', amount: 20 },
+        {name: 'Tomato Sauce', amount: 2 },
+      ]
     },
     {
-      name: 'Yum Stuff',
-      description: 'Yum stuff is really yummy',
-      imagePath: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872'
+      name: 'Big Fat Burger',
+      description: 'The best burger in town',
+      imagePath: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80',
+      ingredients: [
+        { name: 'Meat', amount: 1 },
+        { name: 'Buns', amount: 2 },
+        { name: 'Cheese', amount: 1 },
+      ]
     }
   ];
 
@@ -30,7 +39,7 @@ export class RecipeService {
   }
 
   selectRecipe(recipe: Recipe) {
-    this.recipeChanged.emit({...recipe})
+    this.recipeChanged.emit({...recipe});
   }
 
 }
