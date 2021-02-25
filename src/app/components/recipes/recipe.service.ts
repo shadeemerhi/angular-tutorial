@@ -41,5 +41,4 @@ export class RecipeService {
   selectRecipe(recipe: Recipe) {
     this.recipeChanged.next({...recipe});
   }
-
 }
